@@ -26,5 +26,4 @@ const setupInput = function() {
   
   return stdin;
 }
-
 setupInput()
