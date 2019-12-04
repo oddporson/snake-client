@@ -1,22 +1,8 @@
-const net = require('net');
-
-/**
- * Establishes connection with the game server
- */
-const connect = function() {
-  const conn = net.createConnection({
-    host: '192.168.88.149',
-    port: 50541
-  });
-  // interpret incoming data as text
-  conn.setEncoding('utf8');
-
-  conn.on('data', (data) => {
-    console.log('Server says: ', data);
-  });
-
-  return conn;
-};
-
+const { connect } = require('./client'); // in client.js, module.export = { connect }. This is object destructuring.
 console.log('Connecting ...');
 connect();
+
+// This option also works:
+// const connect = require('./client'); // in client.js, module.export = connnect
+// console.log('Connecting ...');
+// connect();
