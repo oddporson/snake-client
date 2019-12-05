@@ -2,9 +2,8 @@ const { connect } = require('./client');
 const { setupInput } = require('./input');
 
 console.log('Connecting ...');
-connect();
-
-setupInput();
+const conn = connect();
+setupInput(conn);
 
 // This option also works:
 // const connect = require('./client'); // in client.js, module.export = connnect
