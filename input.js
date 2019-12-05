@@ -29,6 +29,9 @@ const setupInput = function(conn) {
     if (key === 'b') {
       conn.write('Say: lol cya')
     }
+    if (key === 'n') {
+      conn.write('Say: catch me')
+    }
   }
   
   stdin.on('data', handleUserInput);
