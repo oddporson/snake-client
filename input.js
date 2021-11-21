@@ -1,43 +1,39 @@
-let connection; 
-const setupInput = function(conn) {
+const { MOVE_UP_KEY, MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, banter, taunt } = require('./constants');
+
+let connection;
+
+const setupInput = (conn) => {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
-  stdin.setEncoding('utf8');
+  stdin.setEncoding("utf8");
   stdin.resume();
   
   const handleUserInput = function(key) {
     if (key === '\u0003') {
       process.exit();
     }
-  
     if (key === 'w') {
-      connection.write('Move: up');
+      connection.write(MOVE_UP_KEY);
     }
-  
     if (key === 's') {
-      connection.write('Move: down');
+      connection.write(MOVE_DOWN_KEY);
     }
-  
-    if (key === 'a') {
-      connection.write('Move: left');
-    }
-  
     if (key === 'd') {
-      connection.write('Move: right');
+      connection.write(MOVE_RIGHT_KEY);
     }
-    if (key === 'b') {
-      conn.write('Say: lol cya')
+    if (key === 'a') {
+      connection.write(MOVE_LEFT_KEY);
     }
-    if (key === 'n') {
-      conn.write('Say: catch me')
+    if (key === "b") {
+      connection.write(banter);
     }
-  }
-  
-  stdin.on('data', handleUserInput);
-  
+    if (key === "t") {
+      connection.write(taunt);
+    }
+  };
+  stdin.on("data", handleUserInput);
   return stdin;
-}
+};
 
-
-module.exports = { setupInput }
+module.exports = { setupInput };
