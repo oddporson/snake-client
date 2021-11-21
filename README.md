@@ -1,8 +1,10 @@
 # Multiplayer Snake Game
 
-A small Snake client project from Lighthouse Labs. Its goal is to understand the topics on TCP and Networking.
+A small Snake client project from Lighthouse Labs. Its goal is to understand the concept of TCP and Networking.
 
 ## How to set up
+
+On first terminal,
 
 `git clone https://github.com/lighthouse-labs/snek-multiplayer.git`
 
@@ -12,7 +14,7 @@ A small Snake client project from Lighthouse Labs. Its goal is to understand the
 
 `npm run play`
 
-On second terminal
+On second terminal,
 
 `node play.js`
 
